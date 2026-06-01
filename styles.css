@@ -1,0 +1,169 @@
+:root {
+  /* ElevenLabs-inspired warm eggshell palette */
+  --bg: #FDFCFC;                       /* eggshell page background */
+  --surface: #FFFFFF;                   /* pure white card surfaces */
+  --surface-2: #F5F3F1;                 /* warm stone */
+  --surface-3: #EDEBE8;                 /* slightly deeper stone */
+  --ink: #000000;                       /* pure black */
+  --ink-2: rgb(68, 64, 59);             /* warm muted brown */
+  --ink-3: rgb(119, 113, 105);          /* lighter warm muted */
+  --ink-4: rgb(165, 159, 151);          /* lightest warm */
+  --rule: rgba(0, 0, 0, 0.075);
+  --rule-strong: rgba(0, 0, 0, 0.15);
+  /* No saturated accent in Eleven palette, they use weight contrast & blacks.
+   * We keep a very restrained "marker" accent for hover/focus only. */
+  --accent: #000000;
+  --accent-soft: rgba(0, 0, 0, 0.05);
+  --gold: oklch(0.78 0.13 86);
+  --green: oklch(0.55 0.13 145);
+  --chip: rgba(0, 0, 0, 0.04);
+
+  --font-display: "Crimson Pro", "Source Serif 4", Georgia, serif;
+  --font-body:    "Hanken Grotesk", -apple-system, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}
+
+html[data-theme="dark"] {
+  --bg: #0A0908;
+  --surface: #14110F;
+  --surface-2: #1A1614;
+  --surface-3: #211C19;
+  --ink: #FAF8F6;
+  --ink-2: rgb(189, 184, 178);
+  --ink-3: rgb(135, 130, 124);
+  --ink-4: rgb(88, 84, 79);
+  --rule: rgba(255, 255, 255, 0.10);
+  --rule-strong: rgba(255, 255, 255, 0.18);
+  --accent: #FAF8F6;
+  --accent-soft: rgba(255, 255, 255, 0.06);
+  --chip: rgba(255, 255, 255, 0.04);
+}
+
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+
+#root { position: relative; z-index: 1; }
+::selection { background: var(--ink); color: var(--bg); }
+html { scroll-behavior: smooth; }
+a { color: inherit; }
+h1, h2, h3 { letter-spacing: 0 !important; }
+
+@media (max-width: 900px) {
+  header {
+    grid-template-columns: 1fr auto !important;
+    gap: 16px !important;
+    padding: 18px 24px !important;
+  }
+
+  header nav,
+  header > div:last-child > a[href="#cta"] {
+    display: none !important;
+  }
+
+  section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  h1 {
+    font-size: 64px !important;
+    line-height: 1 !important;
+  }
+
+  h2 {
+    font-size: 48px !important;
+    line-height: 1.06 !important;
+  }
+
+  h3 {
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+  }
+
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.4fr"],
+  [style*="grid-template-columns: 1.4fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 2fr 1fr 1fr 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  [style*="grid-template-columns: 1fr 140px 140px 80px"] {
+    grid-template-columns: minmax(0, 1fr) 52px 52px 36px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  [style*="grid-template-columns: 100px 130px 1fr 80px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="display: grid"] > * {
+    min-width: 0 !important;
+  }
+
+  [style*="padding: 60px 56px"] {
+    padding: 36px 20px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  [style*="padding: 8px 14px"] {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    padding: 16px 20px !important;
+  }
+
+  header > div:last-child {
+    gap: 8px !important;
+  }
+
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  h1 {
+    font-size: 52px !important;
+  }
+
+  h2 {
+    font-size: 40px !important;
+  }
+
+  h3 {
+    font-size: 28px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+
+  [style*="white-space: nowrap"] {
+    white-space: normal !important;
+  }
+
+  [style*="font-family: var(--font-mono)"] {
+    overflow-wrap: anywhere !important;
+  }
+}

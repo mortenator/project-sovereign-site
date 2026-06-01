@@ -1,0 +1,12 @@
+.DS_Store
+.thumbnail
+
+# Design-export research artifacts; not needed for the hosted static site.
+research/
+uploads/
+screenshots/
+
+# Local dependency/build folders, if this later grows a build step.
+node_modules/
+dist/
+.vercel/

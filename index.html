@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<title>Project Sovereign, Best-in-class software, for a sovereign Europe</title>
+<meta name="description" content="Project Sovereign, an ambitious open-source mission to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules. GDPR, NIS2, DORA, EU AI Act compliant by design." />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#F2F4F7" />
+<link rel="canonical" href="https://projectsovereign.eu/" />
+<meta property="og:title" content="Project Sovereign" />
+<meta property="og:description" content="Best-in-class software, built for a sovereign Europe." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://projectsovereign.eu/" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="root">
+  <!-- Server-rendered SEO/no-JS fallback. Replaced by React when JS loads. -->
+  <main style="max-width: 800px; margin: 0 auto; padding: 80px 32px;">
+    <h1 style="font-family: 'Crimson Pro', Georgia, serif; font-weight: 400; font-size: 56px; line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 24px;">
+      Best-in-class software, built for a sovereign Europe
+    </h1>
+    <p style="font-size: 20px; color: rgba(11,18,32,0.62); margin: 0 0 32px;">
+      Project Sovereign is an open-source mission to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules, owned by the institutions that use it.
+    </p>
+    <p style="font-size: 14px; color: rgba(11,18,32,0.62);">Loading…</p>
+  </main>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="parts/shared.jsx"></script>
+<script type="text/babel" src="parts/reveal.jsx"></script>
+<script type="text/babel" src="parts/chrome.jsx"></script>
+<script type="text/babel" src="parts/editor-demo.jsx"></script>
+<script type="text/babel" src="parts/tweaks-panel.jsx"></script>
+<script type="text/babel" src="parts/home.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    return <HomePage />;
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</body>
+</html>
