@@ -470,7 +470,6 @@ html.ps-ready .ps-boot {
   padding-bottom: 74px;
 }
 
-.ps-hero-demo-meta,
 .ps-hero-demo-foot {
   display: flex;
   justify-content: space-between;
@@ -479,13 +478,6 @@ html.ps-ready .ps-boot {
   font-size: 11px;
   letter-spacing: 0.1em;
   color: rgba(22, 28, 27, 0.68);
-}
-
-.ps-hero-demo-meta {
-  align-items: end;
-  margin-bottom: 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.48);
 }
 
 .ps-hero-demo-card {
@@ -773,7 +765,6 @@ html[data-theme="dark"] .ps-editor-glass .ps-editor-doc {
     padding-bottom: 60px;
   }
 
-  .ps-hero-demo-meta,
   .ps-hero-demo-foot {
     flex-direction: column;
     gap: 6px;

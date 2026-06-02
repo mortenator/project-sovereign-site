@@ -128,11 +128,6 @@ function Hero({ copy, editorMode, docAngle }) {
       {/* Editor demo */}
       <div className="ps-hero-demo-wrap">
         <Reveal y={24} delay={120}>
-          {/* "Document header", register-style metadata above the editor */}
-          <div className="ps-hero-demo-meta">
-            <span>DOC-DEMO · LIVE INSTANCE · {new Date().getFullYear()}</span>
-            <span>EDITOR, TRY IT BELOW</span>
-          </div>
           <div className="ps-hero-demo-card">
             <EditorDemo mode={editorMode} angle={docAngle} height={500} />
           </div>
