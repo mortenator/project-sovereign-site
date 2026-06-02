@@ -307,10 +307,10 @@ html.ps-ready .ps-boot {
 
 .ps-nature-bg {
   z-index: -3;
-  background-image: url("assets/hero-nature-bg.jpg");
+  background-image: url("assets/hero-nature-bg.jpg?v=20260601-gemini");
   background-size: cover;
-  background-position: center 56%;
-  filter: blur(12px) saturate(1.24) contrast(1.04);
+  background-position: center 58%;
+  filter: blur(11px) saturate(1.14) contrast(1.03);
   transform: scale(1.055);
 }
 
@@ -328,8 +328,8 @@ html.ps-ready .ps-boot {
 .ps-nature-veil {
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 20%, rgba(253, 252, 252, 0.42) 0 16%, rgba(253, 252, 252, 0.18) 40%, rgba(253, 252, 252, 0.02) 70%),
-    linear-gradient(180deg, rgba(199, 231, 241, 0.30) 0%, rgba(253, 252, 252, 0.06) 38%, rgba(22, 63, 59, 0.30) 100%);
+    radial-gradient(circle at 50% 20%, rgba(253, 252, 252, 0.48) 0 16%, rgba(253, 252, 252, 0.22) 40%, rgba(253, 252, 252, 0.03) 70%),
+    linear-gradient(180deg, rgba(204, 233, 242, 0.26) 0%, rgba(253, 252, 252, 0.05) 38%, rgba(10, 49, 42, 0.32) 100%);
 }
 
 .ps-nature-content {
