@@ -40,6 +40,7 @@ html[data-theme="dark"] {
 }
 
 html, body { margin: 0; padding: 0; }
+html { overflow-y: scroll; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -55,10 +56,27 @@ body {
 * { box-sizing: border-box; }
 
 #root { position: relative; z-index: 1; }
+body.ps-home #root[aria-hidden="true"] {
+  visibility: hidden;
+}
 ::selection { background: var(--ink); color: var(--bg); }
 html { scroll-behavior: smooth; }
 a { color: inherit; }
 h1, h2, h3 { letter-spacing: 0 !important; }
+
+.ps-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden auto;
+  background: var(--bg);
+}
+
+html.ps-ready .ps-boot {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
 
 .ps-fallback {
   min-height: 100vh;
@@ -121,7 +139,8 @@ h1, h2, h3 { letter-spacing: 0 !important; }
   justify-self: end;
 }
 
-.ps-fallback-icon {
+.ps-fallback-icon,
+.ps-fallback-theme {
   width: 36px;
   height: 36px;
   display: grid;
@@ -129,13 +148,20 @@ h1, h2, h3 { letter-spacing: 0 !important; }
   border: 1px solid var(--rule);
   border-radius: 999px;
   color: var(--ink-2);
+  background: transparent;
   font-family: var(--font-mono);
   font-size: 9px;
   text-decoration: none;
+  padding: 0;
 }
 
-.ps-fallback-icon svg {
+.ps-fallback-icon svg,
+.ps-fallback-theme svg {
   fill: currentColor;
+}
+
+.ps-fallback-theme svg {
+  fill: none;
 }
 
 .ps-fallback-cta,
