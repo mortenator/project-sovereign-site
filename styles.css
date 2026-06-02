@@ -17,11 +17,11 @@
   --gold: oklch(0.78 0.13 86);
   --green: oklch(0.55 0.13 145);
   --chip: rgba(0, 0, 0, 0.04);
-  --editor-glass-shell: rgba(255, 255, 255, 0.66);
-  --editor-glass-bar: rgba(248, 247, 245, 0.52);
-  --editor-glass-page: rgba(255, 255, 255, 0.74);
-  --editor-glass-rail: rgba(248, 247, 245, 0.58);
-  --editor-glass-note: rgba(255, 255, 255, 0.62);
+  --editor-glass-shell: rgba(255, 255, 255, 0.22);
+  --editor-glass-bar: rgba(248, 247, 245, 0.30);
+  --editor-glass-page: rgba(255, 255, 255, 0.28);
+  --editor-glass-rail: rgba(248, 247, 245, 0.30);
+  --editor-glass-note: rgba(255, 255, 255, 0.34);
 
   --font-display: "Crimson Pro", "Source Serif 4", Georgia, serif;
   --font-body:    "Hanken Grotesk", -apple-system, system-ui, sans-serif;
@@ -42,11 +42,11 @@ html[data-theme="dark"] {
   --accent: #FAF8F6;
   --accent-soft: rgba(255, 255, 255, 0.06);
   --chip: rgba(255, 255, 255, 0.04);
-  --editor-glass-shell: rgba(20, 17, 15, 0.68);
-  --editor-glass-bar: rgba(26, 22, 20, 0.56);
-  --editor-glass-page: rgba(20, 17, 15, 0.74);
-  --editor-glass-rail: rgba(26, 22, 20, 0.58);
-  --editor-glass-note: rgba(20, 17, 15, 0.62);
+  --editor-glass-shell: rgba(20, 17, 15, 0.30);
+  --editor-glass-bar: rgba(26, 22, 20, 0.34);
+  --editor-glass-page: rgba(20, 17, 15, 0.40);
+  --editor-glass-rail: rgba(26, 22, 20, 0.36);
+  --editor-glass-note: rgba(20, 17, 15, 0.34);
 }
 
 html, body { margin: 0; padding: 0; }
@@ -510,10 +510,11 @@ html.ps-ready .ps-boot {
   overflow: hidden;
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.10) 52%, rgba(255, 255, 255, 0.24)),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.70), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.06) 52%, rgba(255, 255, 255, 0.20)),
     var(--editor-glass-shell);
-  -webkit-backdrop-filter: blur(24px) saturate(1.18) contrast(1.02);
-  backdrop-filter: blur(24px) saturate(1.18) contrast(1.02);
+  -webkit-backdrop-filter: blur(34px) saturate(1.28) contrast(1.04);
+  backdrop-filter: blur(34px) saturate(1.28) contrast(1.04);
   box-shadow: 0 46px 100px -42px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.62);
 }
 
@@ -555,7 +556,9 @@ html.ps-ready .ps-boot {
 
 .ps-fallback-demo-toolbar {
   padding: 8px 12px;
-  background: var(--editor-glass-page);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.04)),
+    var(--editor-glass-page);
   color: var(--ink-2);
   font-size: 12px;
 }
@@ -568,7 +571,12 @@ html.ps-ready .ps-boot {
   max-width: 620px;
   margin: 0 auto;
   padding: 36px 56px;
-  background: var(--editor-glass-page);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 255, 255, 0.58), transparent 30%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.06) 42%, rgba(255, 255, 255, 0.22)),
+    var(--editor-glass-page);
+  -webkit-backdrop-filter: blur(24px) saturate(1.18);
+  backdrop-filter: blur(24px) saturate(1.18);
   font-family: var(--font-display);
 }
 
@@ -577,10 +585,12 @@ html.ps-ready .ps-boot {
   isolation: isolate;
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.10) 50%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.54), transparent 22%),
+    radial-gradient(circle at 86% 4%, rgba(255, 255, 255, 0.30), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.14)),
     var(--editor-glass-shell) !important;
-  -webkit-backdrop-filter: blur(26px) saturate(1.22) contrast(1.02);
-  backdrop-filter: blur(26px) saturate(1.22) contrast(1.02);
+  -webkit-backdrop-filter: blur(42px) saturate(1.38) contrast(1.06);
+  backdrop-filter: blur(42px) saturate(1.38) contrast(1.06);
   box-shadow: 0 46px 100px -42px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.60), inset 0 1px 0 rgba(255, 255, 255, 0.68), inset 0 -1px 0 rgba(255, 255, 255, 0.22) !important;
 }
 
@@ -596,10 +606,10 @@ html.ps-ready .ps-boot {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.76), transparent 24%),
-    radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.42), transparent 26%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.34), transparent 32%, rgba(255, 255, 255, 0.16) 62%, transparent 78%);
-  opacity: 0.76;
+    radial-gradient(circle at 16% 10%, rgba(255, 255, 255, 0.38), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.24), transparent 26%),
+    linear-gradient(118deg, rgba(255, 255, 255, 0.22), transparent 30%, rgba(255, 255, 255, 0.08) 58%, transparent 76%);
+  opacity: 0.54;
 }
 
 .ps-editor-glass::after {
@@ -616,37 +626,49 @@ html.ps-ready .ps-boot {
 .ps-editor-glass-toolbar,
 .ps-editor-glass-status {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.10)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04)),
     var(--editor-glass-bar) !important;
-  -webkit-backdrop-filter: blur(22px) saturate(1.16);
-  backdrop-filter: blur(22px) saturate(1.16);
+  -webkit-backdrop-filter: blur(28px) saturate(1.22);
+  backdrop-filter: blur(28px) saturate(1.22);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.46);
 }
 
 .ps-editor-glass-page {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.14)),
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.34), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.18), transparent 26%),
+    linear-gradient(125deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.02) 46%, rgba(255, 255, 255, 0.12)),
     var(--editor-glass-page) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.12);
-  backdrop-filter: blur(18px) saturate(1.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  -webkit-backdrop-filter: blur(36px) saturate(1.34) contrast(1.05);
+  backdrop-filter: blur(36px) saturate(1.34) contrast(1.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.44), inset 0 22px 44px rgba(255, 255, 255, 0.08), inset 0 -18px 34px rgba(255, 255, 255, 0.06);
 }
 
 .ps-editor-glass-rail {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.08)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.34), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)),
     var(--editor-glass-rail) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(1.14);
-  backdrop-filter: blur(20px) saturate(1.14);
+  -webkit-backdrop-filter: blur(28px) saturate(1.22);
+  backdrop-filter: blur(28px) saturate(1.22);
 }
 
 .ps-editor-glass-note {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.08)),
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.34), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03)),
     var(--editor-glass-note) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(1.10);
-  backdrop-filter: blur(16px) saturate(1.10);
+  -webkit-backdrop-filter: blur(24px) saturate(1.20);
+  backdrop-filter: blur(24px) saturate(1.20);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.ps-editor-glass .ps-editor-doc {
+  text-shadow: 0 1px 18px rgba(255, 255, 255, 0.72);
+}
+
+html[data-theme="dark"] .ps-editor-glass .ps-editor-doc {
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.44);
 }
 
 .ps-fallback-demo-body small {
