@@ -453,15 +453,6 @@ html.ps-ready .ps-boot {
   backdrop-filter: blur(14px);
 }
 
-.ps-hero-actions > span {
-  margin-left: 10px;
-  color: rgba(38, 43, 41, 0.72);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  white-space: nowrap;
-}
-
 .ps-hero-demo-wrap {
   position: relative;
   z-index: 1;
@@ -736,12 +727,6 @@ html[data-theme="dark"] .ps-editor-glass .ps-editor-doc {
   .ps-fallback-hero .ps-hero-sub {
     max-width: 640px;
     font-size: 18px !important;
-  }
-
-  .ps-hero-actions > span {
-    width: 100%;
-    margin-left: 0;
-    text-align: center;
   }
 
   .ps-hero-demo-wrap {

@@ -118,9 +118,6 @@ function Hero({ copy, editorMode, docAngle }) {
             <a className="ps-hero-secondary" href="security.html">
               {copy.cta2}
             </a>
-            <span>
-              v0.4 · APACHE-2.0 · 1.2K ★
-            </span>
           </div>
         </Reveal>
       </div>
