@@ -73,47 +73,27 @@ function HomePage() {
 // ---------- Hero ----------
 function Hero({ copy, editorMode, docAngle }) {
   return (
-    <section style={{ padding: "70px 48px 30px", position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto" }}>
+    <section className="ps-nature-hero">
+      <div className="ps-nature-bg" aria-hidden="true"></div>
+      <div className="ps-nature-grid" aria-hidden="true"></div>
+      <div className="ps-nature-veil" aria-hidden="true"></div>
+
+      <div className="ps-nature-content">
         {/* Eyebrow */}
         <Reveal y={12}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 12,
-            padding: "6px 12px",
-            border: `1px solid var(--rule-strong)`,
-            background: "var(--chip)",
-            fontFamily: "var(--font-mono)", fontSize: 11,
-            letterSpacing: "0.14em",
-            color: "var(--ink-2)",
-            marginBottom: 28,
-            whiteSpace: "nowrap",
-          }}>
-            <span style={{
-              width: 6, height: 6, background: "var(--green)",
-              boxShadow: "0 0 0 3px oklch(0.55 0.13 145 / 0.18)",
-            }}></span>
-            {copy.eyebrow}
+          <div className="ps-hero-eyebrow">
+            <span></span>
+            <strong>{copy.eyebrow}</strong>
           </div>
         </Reveal>
 
         {/* Title */}
         <Reveal y={18} delay={80}>
-          <h1 style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            fontSize: 92,
-            lineHeight: 0.98,
-            letterSpacing: "-0.035em",
-            margin: 0,
-            maxWidth: 1180,
-            textWrap: "balance",
-          }}>
+          <h1 className="ps-hero-title">
             {copy.title.map((line, i) => (
-              <span key={i} style={{ display: "block" }}>
+              <span key={i}>
                 {i === copy.titleEm ? (
-                  <em style={{ fontStyle: "italic", fontWeight: 400 }}>
-                    {line}
-                  </em>
+                  <em>{line}</em>
                 ) : (
                   line
                 )}
@@ -124,50 +104,21 @@ function Hero({ copy, editorMode, docAngle }) {
 
         {/* Sub */}
         <Reveal y={14} delay={160}>
-          <p style={{
-            maxWidth: 660,
-            fontSize: 19,
-            lineHeight: 1.5,
-            color: "var(--ink-2)",
-            margin: "32px 0 36px",
-            textWrap: "pretty",
-          }}>
+          <p className="ps-hero-sub">
             {copy.sub}
           </p>
         </Reveal>
 
         {/* CTAs */}
         <Reveal y={12} delay={220}>
-          <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-            <a href="#cta" style={{
-              padding: "13px 22px",
-              borderRadius: 999,
-              background: "var(--ink)", color: "var(--bg)",
-              fontSize: 14.5, fontWeight: 500,
-              textDecoration: "none",
-              display: "inline-flex", alignItems: "center", gap: 10,
-              whiteSpace: "nowrap",
-            }}>
+          <div className="ps-hero-actions">
+            <a className="ps-hero-primary" href="#cta">
               {copy.cta1} <Icon.Arrow size={13} color="var(--bg)" />
             </a>
-            <a href="security.html" style={{
-              padding: "13px 22px",
-              borderRadius: 999,
-              border: `1px solid var(--rule-strong)`,
-              color: "var(--ink)",
-              fontSize: 14.5, fontWeight: 500,
-              textDecoration: "none",
-              display: "inline-flex", alignItems: "center", gap: 10,
-              background: "transparent",
-              whiteSpace: "nowrap",
-            }}>
+            <a className="ps-hero-secondary" href="security.html">
               {copy.cta2}
             </a>
-            <span style={{
-              marginLeft: 10,
-              fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
-              color: "var(--ink-2)", whiteSpace: "nowrap",
-            }}>
+            <span>
               v0.4 · APACHE-2.0 · 1.2K ★
             </span>
           </div>
@@ -175,26 +126,17 @@ function Hero({ copy, editorMode, docAngle }) {
       </div>
 
       {/* Editor demo */}
-      <div style={{ position: "relative", maxWidth: 1280, margin: "72px auto 0" }}>
+      <div className="ps-hero-demo-wrap">
         <Reveal y={24} delay={120}>
           {/* "Document header", register-style metadata above the editor */}
-          <div style={{
-            display: "flex", justifyContent: "space-between", alignItems: "end",
-            marginBottom: 14, paddingBottom: 8,
-            borderBottom: `1px solid var(--rule)`,
-            fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
-            color: "var(--ink-2)",
-          }}>
+          <div className="ps-hero-demo-meta">
             <span>DOC-DEMO · LIVE INSTANCE · {new Date().getFullYear()}</span>
             <span>EDITOR, TRY IT BELOW</span>
           </div>
-          <EditorDemo mode={editorMode} angle={docAngle} height={580} />
-          <div style={{
-            marginTop: 14,
-            display: "flex", justifyContent: "space-between",
-            fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em",
-            color: "var(--ink-3)",
-          }}>
+          <div className="ps-hero-demo-card">
+            <EditorDemo mode={editorMode} angle={docAngle} height={500} />
+          </div>
+          <div className="ps-hero-demo-foot">
             <span>↑ {editorMode === "live" ? "GO AHEAD, TYPE INTO IT. NOTHING LEAVES YOUR BROWSER." : editorMode === "animated" ? "AUTOPLAY MODE · CONTENT TYPES ITSELF" : "STATIC PREVIEW"}</span>
             <span>END · DEMO</span>
           </div>

@@ -380,17 +380,17 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
           <span style={{ width: 11, height: 11, borderRadius: 999, background: "var(--rule-strong)" }}></span>
           <span style={{ width: 11, height: 11, borderRadius: 999, background: "var(--rule-strong)" }}></span>
         </div>
-        <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 8, marginLeft: 6 }}>
+        <div className="ps-editor-title-strip" style={{ flex: 1, display: "flex", alignItems: "center", gap: 8, marginLeft: 6 }}>
           <Icon.Doc size={13} color="var(--ink-2)" />
-          <span style={{ color: "var(--ink)", fontWeight: 500 }}>{preset.title}.docx</span>
-          <span style={{ color: "var(--ink-3)", fontSize: 12, fontFamily: "var(--font-mono)" }}>· v0.4</span>
-          <span style={{
+          <span className="ps-editor-file-title" style={{ color: "var(--ink)", fontWeight: 500 }}>{preset.title}.docx</span>
+          <span className="ps-editor-version" style={{ color: "var(--ink-3)", fontSize: 12, fontFamily: "var(--font-mono)" }}>· v0.4</span>
+          <span className="ps-editor-region-badge" style={{
             fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.15em",
             color: "var(--accent)", border: `1px solid var(--accent)`, padding: "2px 6px",
             marginLeft: 6,
           }}>EEA-DE</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+        <div className="ps-editor-collaborators" style={{ display: "flex", alignItems: "center", gap: 0 }}>
           {collaborators.map((c, i) => (
             <span key={c.initial} title={c.name} style={{
               width: 24, height: 24, borderRadius: 999,
@@ -405,7 +405,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
             </span>
           ))}
         </div>
-        <span style={{
+        <span className="ps-editor-save-state" style={{
           color: "var(--ink-2)", fontSize: 11.5,
           fontFamily: "var(--font-mono)", letterSpacing: "0.08em",
           marginLeft: 6,

@@ -17,8 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/hero-nature-bg.jpg" fetchpriority="high" />
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=20260601-nature-5" />
 </head>
 <body class="ps-home">
 
@@ -46,26 +47,59 @@
             <path d="M21 12.8 A9 9 0 1 1 11.2 3 a7 7 0 0 0 9.8 9.8 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
-        <a class="ps-fallback-cta" href="#cta">Self-host <span aria-hidden="true">-></span></a>
+        <a class="ps-fallback-cta" href="#cta">Self-host <span aria-hidden="true">→</span></a>
       </div>
     </header>
 
-    <main class="ps-fallback-hero">
-      <div class="ps-fallback-eyebrow">
-        <span aria-hidden="true"></span>
-        PROJECT SOVEREIGN · A EUROPEAN MISSION
+    <main class="ps-fallback-hero ps-nature-hero">
+      <div class="ps-nature-bg" aria-hidden="true"></div>
+      <div class="ps-nature-grid" aria-hidden="true"></div>
+      <div class="ps-nature-veil" aria-hidden="true"></div>
+
+      <div class="ps-nature-content">
+        <div class="ps-hero-eyebrow">
+          <span aria-hidden="true"></span>
+          <strong>PROJECT SOVEREIGN · A EUROPEAN MISSION</strong>
+        </div>
+        <h1 class="ps-hero-title">
+          <span>Best-in-class software,</span>
+          <em>built for a sovereign Europe</em>
+        </h1>
+        <p class="ps-hero-sub">
+          Project Sovereign is an open-source initiative to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules, owned by the institutions that use it. Apache 2.0, free forever, made to outlast its makers.
+        </p>
+        <div class="ps-hero-actions">
+          <a class="ps-hero-primary" href="#cta">Self-host the suite <span aria-hidden="true">→</span></a>
+          <a class="ps-hero-secondary" href="security.html">Read the manifesto</a>
+          <span>v0.4 · APACHE-2.0 · 1.2K ★</span>
+        </div>
       </div>
-      <h1>
-        <span>Best-in-class software,</span>
-        <em>built for a sovereign Europe</em>
-      </h1>
-      <p>
-        Project Sovereign is an open-source initiative to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules, owned by the institutions that use it. Apache 2.0, free forever, made to outlast its makers.
-      </p>
-      <div class="ps-fallback-buttons">
-        <a class="ps-fallback-primary" href="#cta">Self-host the suite <span aria-hidden="true">-></span></a>
-        <a class="ps-fallback-secondary" href="security.html">Read the manifesto</a>
-        <span>v0.4 · APACHE-2.0 · 1.2K *</span>
+
+      <div class="ps-hero-demo-wrap ps-fallback-demo-wrap" aria-hidden="true">
+        <div class="ps-hero-demo-meta">
+          <span>DOC-DEMO · LIVE INSTANCE · 2026</span>
+          <span>EDITOR, TRY IT BELOW</span>
+        </div>
+        <div class="ps-fallback-demo-card">
+          <div class="ps-fallback-demo-titlebar">
+            <span></span><span></span><span></span>
+            <strong>EU AI Act, Compliance Memo.docx</strong>
+            <em>EEA-DE</em>
+          </div>
+          <div class="ps-fallback-demo-toolbar">
+            <span>Body</span><span>B</span><span>I</span><span>U</span><span>H1</span><span>H2</span><span>¶</span>
+          </div>
+          <div class="ps-fallback-demo-body">
+            <small>DRAFT // INTERNAL // CLS-PUB-002</small>
+            <h2>EU AI Act, Compliance Memo</h2>
+            <p>Under Article 16 of the AI Act, the provider is responsible for ensuring high-risk systems undergo conformity assessment before being placed on the market.</p>
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+        <div class="ps-hero-demo-foot">
+          <span>↑ GO AHEAD, TYPE INTO IT. NOTHING LEAVES YOUR BROWSER.</span>
+          <span>END · DEMO</span>
+        </div>
       </div>
     </main>
   </div>
@@ -77,12 +111,12 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="parts/shared.jsx"></script>
-<script type="text/babel" src="parts/reveal.jsx"></script>
-<script type="text/babel" src="parts/chrome.jsx"></script>
-<script type="text/babel" src="parts/editor-demo.jsx"></script>
-<script type="text/babel" src="parts/tweaks-panel.jsx"></script>
-<script type="text/babel" src="parts/home.jsx"></script>
+<script type="text/babel" src="parts/shared.jsx?v=20260601-nature-5"></script>
+<script type="text/babel" src="parts/reveal.jsx?v=20260601-nature-5"></script>
+<script type="text/babel" src="parts/chrome.jsx?v=20260601-nature-5"></script>
+<script type="text/babel" src="parts/editor-demo.jsx?v=20260601-nature-5"></script>
+<script type="text/babel" src="parts/tweaks-panel.jsx?v=20260601-nature-5"></script>
+<script type="text/babel" src="parts/home.jsx?v=20260601-nature-5"></script>
 
 <script type="text/babel">
   function App() {
