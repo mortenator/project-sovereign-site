@@ -357,7 +357,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
   ];
 
   return (
-    <div style={{
+    <div className="ps-editor-glass" style={{
       background: "var(--surface)",
       border: `1px solid var(--rule)`,
       boxShadow: "0 30px 60px -20px rgba(11,18,32,0.18), 0 1px 0 rgba(255,255,255,0.6) inset",
@@ -368,7 +368,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
     }}>
 
       {/* Top chrome, filename, share, collaborators */}
-      <div style={{
+      <div className="ps-editor-glass-bar" style={{
         display: "flex", alignItems: "center",
         padding: "12px 16px",
         borderBottom: `1px solid var(--rule)`,
@@ -415,7 +415,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
       </div>
 
       {/* Toolbar */}
-      <div style={{
+      <div className="ps-editor-glass-toolbar" style={{
         display: "flex", alignItems: "center", gap: 2,
         padding: "8px 12px",
         borderBottom: `1px solid var(--rule)`,
@@ -468,7 +468,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
 
       {/* Document + comments */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 220px", flex: 1, minHeight: 0 }}>
-        <div style={{
+        <div className="ps-editor-glass-page" style={{
           padding: "32px 56px 32px 56px",
           overflow: "auto",
           background: "var(--surface)",
@@ -491,7 +491,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
         </div>
 
         {/* Comments rail */}
-        <aside style={{
+        <aside className="ps-editor-glass-rail" style={{
           borderLeft: `1px solid var(--rule)`,
           padding: "20px 18px",
           background: "var(--surface-2)",
@@ -503,7 +503,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
             color: "var(--ink-2)", textTransform: "uppercase", marginBottom: 14,
           }}>Comments · {preset.comments.length}</div>
           {preset.comments.map((c, i) => (
-            <div key={i} style={{
+            <div className="ps-editor-glass-note" key={i} style={{
               padding: 12,
               border: `1px solid var(--rule)`,
               background: "var(--surface)",
@@ -542,7 +542,7 @@ function EditorDemo({ mode = "live", angle = "residency", height = 560 }) {
       </div>
 
       {/* Status bar */}
-      <div style={{
+      <div className="ps-editor-glass-status" style={{
         display: "flex", alignItems: "center",
         padding: "8px 16px",
         borderTop: `1px solid var(--rule)`,

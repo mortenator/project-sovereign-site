@@ -17,6 +17,11 @@
   --gold: oklch(0.78 0.13 86);
   --green: oklch(0.55 0.13 145);
   --chip: rgba(0, 0, 0, 0.04);
+  --editor-glass-shell: rgba(255, 255, 255, 0.84);
+  --editor-glass-bar: rgba(245, 243, 241, 0.76);
+  --editor-glass-page: rgba(255, 255, 255, 0.88);
+  --editor-glass-rail: rgba(245, 243, 241, 0.78);
+  --editor-glass-note: rgba(255, 255, 255, 0.74);
 
   --font-display: "Crimson Pro", "Source Serif 4", Georgia, serif;
   --font-body:    "Hanken Grotesk", -apple-system, system-ui, sans-serif;
@@ -37,6 +42,11 @@ html[data-theme="dark"] {
   --accent: #FAF8F6;
   --accent-soft: rgba(255, 255, 255, 0.06);
   --chip: rgba(255, 255, 255, 0.04);
+  --editor-glass-shell: rgba(20, 17, 15, 0.82);
+  --editor-glass-bar: rgba(26, 22, 20, 0.76);
+  --editor-glass-page: rgba(20, 17, 15, 0.86);
+  --editor-glass-rail: rgba(26, 22, 20, 0.78);
+  --editor-glass-note: rgba(20, 17, 15, 0.72);
 }
 
 html, body { margin: 0; padding: 0; }
@@ -84,11 +94,17 @@ html.ps-ready .ps-boot {
 }
 
 .ps-fallback-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 22px 48px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid transparent;
+  background: transparent;
 }
 
 .ps-fallback-logo {
@@ -273,7 +289,7 @@ html.ps-ready .ps-boot {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: calc(100vh - 86px);
+  min-height: 100vh;
   padding: 76px 48px 0;
   border-bottom: 1px solid var(--rule);
   background: #d8ecf2;
@@ -492,7 +508,9 @@ html.ps-ready .ps-boot {
   height: 500px;
   overflow: hidden;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--editor-glass-shell);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  backdrop-filter: blur(18px) saturate(1.08);
   box-shadow: 0 42px 90px -40px rgba(0, 0, 0, 0.54), 0 0 0 1px rgba(255, 255, 255, 0.58);
 }
 
@@ -506,7 +524,7 @@ html.ps-ready .ps-boot {
 
 .ps-fallback-demo-titlebar {
   padding: 12px 16px;
-  background: var(--surface-2);
+  background: var(--editor-glass-bar);
   font-size: 13px;
 }
 
@@ -534,6 +552,7 @@ html.ps-ready .ps-boot {
 
 .ps-fallback-demo-toolbar {
   padding: 8px 12px;
+  background: var(--editor-glass-page);
   color: var(--ink-2);
   font-size: 12px;
 }
@@ -546,7 +565,41 @@ html.ps-ready .ps-boot {
   max-width: 620px;
   margin: 0 auto;
   padding: 36px 56px;
+  background: var(--editor-glass-page);
   font-family: var(--font-display);
+}
+
+.ps-editor-glass {
+  background: var(--editor-glass-shell) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  backdrop-filter: blur(18px) saturate(1.08);
+  box-shadow: 0 38px 84px -36px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.46) !important;
+}
+
+.ps-editor-glass-bar,
+.ps-editor-glass-toolbar,
+.ps-editor-glass-status {
+  background: var(--editor-glass-bar) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.06);
+  backdrop-filter: blur(16px) saturate(1.06);
+}
+
+.ps-editor-glass-page {
+  background: var(--editor-glass-page) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.04);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.ps-editor-glass-rail {
+  background: var(--editor-glass-rail) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.06);
+  backdrop-filter: blur(14px) saturate(1.06);
+}
+
+.ps-editor-glass-note {
+  background: var(--editor-glass-note) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.03);
+  backdrop-filter: blur(10px) saturate(1.03);
 }
 
 .ps-fallback-demo-body small {

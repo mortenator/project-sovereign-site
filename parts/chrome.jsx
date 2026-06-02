@@ -72,6 +72,16 @@ function Logo({ size = 22 }) {
 }
 
 function NavBar({ current = "home" }) {
+  const isHome = current === "home";
+  const [scrolled, setScrolled] = React.useState(() => (
+    typeof window !== "undefined" ? window.scrollY > 12 : false
+  ));
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const links = [
     { id: "editor",   label: "Editor",     href: "editor.html" },
     { id: "deploy",   label: "Deploy",     href: "deploy.html" },
@@ -79,18 +89,22 @@ function NavBar({ current = "home" }) {
     { id: "resources",label: "Resources",  href: "resources.html" },
   ];
   return (
-    <header style={{
+    <header className={`ps-site-nav ${scrolled ? "is-scrolled" : ""}`} style={{
       display: "grid",
       gridTemplateColumns: "1fr auto 1fr",
       alignItems: "center",
       padding: "22px 48px",
-      borderBottom: `1px solid var(--rule)`,
-      background: "color-mix(in oklab, var(--bg) 92%, transparent)",
-      backdropFilter: "blur(6px)",
-      WebkitBackdropFilter: "blur(6px)",
-      position: "sticky",
+      borderBottom: `1px solid ${scrolled ? "var(--rule)" : "transparent"}`,
+      background: scrolled ? "color-mix(in oklab, var(--bg) 78%, transparent)" : "transparent",
+      backdropFilter: scrolled ? "blur(18px) saturate(1.08)" : "none",
+      WebkitBackdropFilter: scrolled ? "blur(18px) saturate(1.08)" : "none",
+      boxShadow: scrolled ? "0 16px 40px rgba(0, 0, 0, 0.055)" : "none",
+      position: isHome ? "fixed" : "sticky",
       top: 0,
+      left: 0,
+      right: 0,
       zIndex: 50,
+      transition: "background 220ms ease, border-color 220ms ease, box-shadow 220ms ease, backdrop-filter 220ms ease",
     }}>
       <a href="index.html" style={{ textDecoration: "none", justifySelf: "start" }}>
         <Logo />
