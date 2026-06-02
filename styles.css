@@ -303,10 +303,10 @@ html.ps-ready .ps-boot {
   --accent-soft: rgba(0, 0, 0, 0.05);
   --chip: rgba(0, 0, 0, 0.04);
   --editor-glass-shell: rgba(255, 255, 255, 0.22);
-  --editor-glass-bar: rgba(248, 247, 245, 0.30);
-  --editor-glass-page: rgba(255, 255, 255, 0.28);
-  --editor-glass-rail: rgba(248, 247, 245, 0.30);
-  --editor-glass-note: rgba(255, 255, 255, 0.34);
+  --editor-glass-bar: rgba(248, 247, 245, 0.48);
+  --editor-glass-page: rgba(255, 255, 255, 0.72);
+  --editor-glass-rail: rgba(248, 247, 245, 0.66);
+  --editor-glass-note: rgba(255, 255, 255, 0.74);
   min-height: 100vh;
   padding: 76px 48px 0;
   border-bottom: 1px solid var(--rule);
@@ -803,6 +803,11 @@ html[data-theme="dark"] .ps-nature-hero .ps-editor-doc .doc-comment-mark {
     gap: 32px !important;
   }
 
+  .ps-editor-glass [style*="grid-template-columns: 1fr 220px"] {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 220px) !important;
+    gap: 0 !important;
+  }
+
   [style*="grid-template-columns: 1fr 140px 140px 80px"] {
     grid-template-columns: minmax(0, 1fr) 52px 52px 36px !important;
     padding-left: 12px !important;
@@ -830,6 +835,10 @@ html[data-theme="dark"] .ps-nature-hero .ps-editor-doc .doc-comment-mark {
 }
 
 @media (max-width: 520px) {
+  .ps-editor-glass [style*="grid-template-columns: 1fr 220px"] {
+    grid-template-columns: 1fr !important;
+  }
+
   header {
     padding: 16px 20px !important;
   }
