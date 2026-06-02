@@ -399,6 +399,11 @@ html.ps-ready .ps-boot {
   text-wrap: balance;
 }
 
+.ps-nature-hero .ps-hero-title,
+.ps-fallback-hero.ps-nature-hero .ps-hero-title {
+  color: #000000;
+}
+
 .ps-hero-title span,
 .ps-hero-title em {
   display: block;

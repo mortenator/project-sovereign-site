@@ -1,6 +1,6 @@
 // Nav, footer, theme toggle. Used by all pages.
 
-function ThemeToggle() {
+function ThemeToggle({ onImage = false }) {
   const [mode, setMode] = React.useState(() => {
     if (typeof document === "undefined") return "light";
     // localStorage is the source of truth; the HTML attr is just a default.
@@ -16,6 +16,8 @@ function ThemeToggle() {
     window.dispatchEvent(new CustomEvent("ps-theme-change", { detail: { mode } }));
   }, [mode]);
   const isDark = mode === "dark";
+  const controlColor = onImage ? "rgb(42, 45, 43)" : "var(--ink-2)";
+  const controlRule = onImage ? "rgba(0, 0, 0, 0.12)" : "var(--rule)";
   return (
     <button
       type="button"
@@ -24,10 +26,10 @@ function ThemeToggle() {
       className="ps-nav-btn"
       style={{
         width: 36, height: 36,
-        border: `1px solid var(--rule)`,
+        border: `1px solid ${controlRule}`,
         background: "transparent",
         display: "grid", placeItems: "center",
-        cursor: "pointer", color: "var(--ink-2)",
+        cursor: "pointer", color: controlColor,
         transition: "color 200ms ease, background 200ms ease",
         borderRadius: 999,
       }}
@@ -46,15 +48,15 @@ function ThemeToggle() {
   );
 }
 
-function Logo({ size = 22 }) {
+function Logo({ size = 22, ink = "var(--ink)", bg = "var(--bg)" }) {
   // Eleven-style: tiny solid square mark + tight wordmark.
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
       <span style={{
         width: size, height: size,
-        background: "var(--ink)",
+        background: ink,
         display: "grid", placeItems: "center",
-        color: "var(--bg)",
+        color: bg,
         fontFamily: "var(--font-display)",
         fontSize: size * 0.55,
         fontWeight: 600,
@@ -63,7 +65,7 @@ function Logo({ size = 22 }) {
       <span style={{
         fontFamily: "var(--font-display)", fontSize: 18,
         fontWeight: 500, letterSpacing: "-0.02em",
-        color: "var(--ink)",
+        color: ink,
       }}>
         Sovereign
       </span>
@@ -88,8 +90,16 @@ function NavBar({ current = "home" }) {
     { id: "security", label: "Security",   href: "security.html" },
     { id: "resources",label: "Resources",  href: "resources.html" },
   ];
+  const onImage = isHome && !scrolled;
+  const navInk = onImage ? "#000000" : "var(--ink)";
+  const navInk2 = onImage ? "rgb(42, 45, 43)" : "var(--ink-2)";
+  const navBg = onImage ? "#FDFCFC" : "var(--bg)";
+  const navRule = onImage ? "rgba(0, 0, 0, 0.12)" : "var(--rule)";
+  const navChip = onImage ? "rgba(253, 252, 252, 0.34)" : "var(--chip)";
+  const navCtaBg = onImage ? "#000000" : "var(--ink)";
+  const navCtaText = onImage ? "#FDFCFC" : "var(--bg)";
   return (
-    <header className={`ps-site-nav ${scrolled ? "is-scrolled" : ""}`} style={{
+    <header className={`ps-site-nav ${onImage ? "is-on-image" : ""} ${scrolled ? "is-scrolled" : ""}`} style={{
       display: "grid",
       gridTemplateColumns: "1fr auto 1fr",
       alignItems: "center",
@@ -107,7 +117,7 @@ function NavBar({ current = "home" }) {
       transition: "background 220ms ease, border-color 220ms ease, box-shadow 220ms ease, backdrop-filter 220ms ease",
     }}>
       <a href="index.html" style={{ textDecoration: "none", justifySelf: "start" }}>
-        <Logo />
+        <Logo ink={navInk} bg={navBg} />
       </a>
       <nav style={{ display: "flex", gap: 4, alignItems: "center", justifySelf: "center" }}>
         {links.map(l => {
@@ -115,12 +125,12 @@ function NavBar({ current = "home" }) {
           return (
             <a key={l.id} href={l.href} style={{
               fontSize: 14,
-              color: active ? "var(--ink)" : "var(--ink-2)",
+              color: active ? navInk : navInk2,
               textDecoration: "none",
               padding: "8px 14px",
               borderRadius: 999,
               fontWeight: active ? 500 : 400,
-              background: active ? "var(--chip)" : "transparent",
+              background: active ? navChip : "transparent",
               transition: "color 200ms ease, background 200ms ease",
             }}>
               {l.label}
@@ -133,9 +143,9 @@ function NavBar({ current = "home" }) {
            className="ps-nav-btn"
            style={{
              width: 36, height: 36,
-             border: `1px solid var(--rule)`,
+             border: `1px solid ${navRule}`,
              display: "grid", placeItems: "center",
-             color: "var(--ink-2)",
+             color: navInk2,
              transition: "color 200ms ease",
              borderRadius: 999,
            }}
@@ -143,12 +153,12 @@ function NavBar({ current = "home" }) {
         >
           <Icon.Github size={15} />
         </a>
-        <ThemeToggle />
+        <ThemeToggle onImage={onImage} />
         <a href="#cta" style={{
           padding: "10px 18px",
           borderRadius: 999,
-          background: "var(--ink)",
-          color: "var(--bg)",
+          background: navCtaBg,
+          color: navCtaText,
           fontSize: 14,
           fontWeight: 500,
           textDecoration: "none",
@@ -157,7 +167,7 @@ function NavBar({ current = "home" }) {
           gap: 8,
           whiteSpace: "nowrap",
         }}>
-          Self-host <Icon.Arrow size={12} color="var(--bg)" />
+          Self-host <Icon.Arrow size={12} color={navCtaText} />
         </a>
       </div>
     </header>
@@ -228,6 +238,7 @@ function Footer() {
   s.id = "ps-chrome-css";
   s.textContent = `
     .ps-nav-btn:hover { color: var(--ink) !important; background: var(--chip) !important; }
+    .ps-site-nav.is-on-image .ps-nav-btn:hover { color: #000 !important; background: rgba(253, 252, 252, 0.28) !important; }
     a:hover { transition: color 200ms ease; }
   `;
   document.head.appendChild(s);
