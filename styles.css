@@ -289,6 +289,24 @@ html.ps-ready .ps-boot {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  --bg: #FDFCFC;
+  --surface: #FFFFFF;
+  --surface-2: #F5F3F1;
+  --surface-3: #EDEBE8;
+  --ink: #000000;
+  --ink-2: rgb(68, 64, 59);
+  --ink-3: rgb(119, 113, 105);
+  --ink-4: rgb(165, 159, 151);
+  --rule: rgba(0, 0, 0, 0.075);
+  --rule-strong: rgba(0, 0, 0, 0.15);
+  --accent: #000000;
+  --accent-soft: rgba(0, 0, 0, 0.05);
+  --chip: rgba(0, 0, 0, 0.04);
+  --editor-glass-shell: rgba(255, 255, 255, 0.22);
+  --editor-glass-bar: rgba(248, 247, 245, 0.30);
+  --editor-glass-page: rgba(255, 255, 255, 0.28);
+  --editor-glass-rail: rgba(248, 247, 245, 0.30);
+  --editor-glass-note: rgba(255, 255, 255, 0.34);
   min-height: 100vh;
   padding: 76px 48px 0;
   border-bottom: 1px solid var(--rule);
@@ -642,6 +660,19 @@ html.ps-ready .ps-boot {
 
 html[data-theme="dark"] .ps-editor-glass .ps-editor-doc {
   text-shadow: 0 1px 18px rgba(0, 0, 0, 0.44);
+}
+
+html[data-theme="dark"] .ps-nature-hero .ps-editor-glass .ps-editor-doc {
+  color: #000000;
+  text-shadow: 0 1px 18px rgba(255, 255, 255, 0.72);
+}
+
+html[data-theme="dark"] .ps-nature-hero .ps-editor-doc .doc-hl {
+  background: oklch(0.85 0.13 86 / 0.4);
+}
+
+html[data-theme="dark"] .ps-nature-hero .ps-editor-doc .doc-comment-mark {
+  background: oklch(0.85 0.06 60 / 0.55);
 }
 
 .ps-fallback-demo-body small {
