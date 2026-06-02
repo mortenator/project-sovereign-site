@@ -131,10 +131,6 @@ function Hero({ copy, editorMode, docAngle }) {
           <div className="ps-hero-demo-card">
             <EditorDemo mode={editorMode} angle={docAngle} height={500} />
           </div>
-          <div className="ps-hero-demo-foot">
-            <span>↑ {editorMode === "live" ? "GO AHEAD, TYPE INTO IT. NOTHING LEAVES YOUR BROWSER." : editorMode === "animated" ? "AUTOPLAY MODE · CONTENT TYPES ITSELF" : "STATIC PREVIEW"}</span>
-            <span>END · DEMO</span>
-          </div>
         </Reveal>
       </div>
     </section>
