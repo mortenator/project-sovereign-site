@@ -1,8 +1,29 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "projectsovereign.eu" }],
+      "destination": "https://www.projectsovereign.eu/:path*",
+      "permanent": true
+    },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/editor.html", "destination": "/editor", "permanent": true },
+    { "source": "/deploy.html", "destination": "/deploy", "permanent": true },
+    { "source": "/security.html", "destination": "/security", "permanent": true },
+    { "source": "/resources.html", "destination": "/resources", "permanent": true }
+  ],
   "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
