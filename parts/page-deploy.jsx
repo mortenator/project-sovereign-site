@@ -91,7 +91,7 @@ function PageDeploy() {
       </section>
 
       {/* The stack */}
-      <section style={{ padding: "100px 48px", borderTop: `1px solid var(--rule)`, background: "var(--surface-2)" }}>
+      <section className="ps-box-section" style={{ padding: "100px 48px", borderTop: `1px solid var(--rule)`, background: "var(--surface-2)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <SectionHeader
             eyebrow="THE STACK"
@@ -99,7 +99,7 @@ function PageDeploy() {
             sub="Nothing exotic, nothing proprietary in the data path. Pinned versions, signed images, reproducible builds."
           />
 
-          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+          <div className="ps-box-grid" style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 1, border: `1px solid var(--rule)`, background: "var(--rule)" }}>
             {[
               { name: "OnlyOffice", role: "DOCUMENT ENGINE", ver: "v8.x", note: "MPL-2.0 · DOCX/XLSX/PPTX rendering" },
               { name: "HocusPocus", role: "COLLABORATION",   ver: "v2.x", note: "Yjs CRDT server, websocket transport" },
@@ -110,7 +110,7 @@ function PageDeploy() {
               { name: "Traefik",    role: "REVERSE PROXY",   ver: "v3",   note: "TLS termination, ACME, routing" },
               { name: "apps/web",   role: "FRONTEND",        ver: "React 18", note: "The shell. Built in apps/web, Vite + TS." },
             ].map(s => (
-              <div key={s.name} style={{
+              <div className="ps-box-card" key={s.name} style={{
                 padding: "22px 24px",
                 border: `1px solid var(--rule)`,
                 background: "var(--surface)",
@@ -138,7 +138,7 @@ function PageDeploy() {
             sub="We don't make up a fictional 'enterprise tier' with extra features. The same code runs at all three sizes, these are the three operating envelopes we test and support."
           />
 
-          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 1, border: `1px solid var(--rule)`, background: "var(--rule)" }}>
+          <div className="ps-box-grid" style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 1, border: `1px solid var(--rule)`, background: "var(--rule)" }}>
             {[
               {
                 n: "01", scale: "TEAM (≤ 50 users)",
@@ -174,7 +174,7 @@ function PageDeploy() {
                 ],
               },
             ].map(t => (
-              <div key={t.n} style={{ padding: "36px 32px", background: "var(--bg)" }}>
+              <div className="ps-box-card" key={t.n} style={{ padding: "36px 32px", background: "var(--bg)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 24 }}>
                   <CivicNumeral n={parseInt(t.n)} color="var(--accent)" />
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: "0.15em", color: "var(--ink-2)" }}>{t.scale}</span>

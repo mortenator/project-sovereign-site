@@ -15,9 +15,9 @@ function PageSecurity() {
       />
 
       {/* Compliance overview grid */}
-      <section style={{ padding: "60px 48px 100px", borderTop: `1px solid var(--rule)` }}>
+      <section className="ps-box-section" style={{ padding: "60px 48px 100px", borderTop: `1px solid var(--rule)` }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{
+          <div className="ps-box-grid" style={{
             display: "grid", gridTemplateColumns: "1fr 1fr",
             gap: 1, border: `1px solid var(--rule)`, background: "var(--rule)",
           }}>
@@ -76,7 +76,7 @@ function PageSecurity() {
                 ],
               },
             ].map(c => (
-              <div id={c.id} key={c.id} style={{ padding: "40px 36px", background: "var(--bg)" }}>
+              <div className="ps-box-card" id={c.id} key={c.id} style={{ padding: "40px 36px", background: "var(--bg)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
                   <span style={{
                     fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 500,

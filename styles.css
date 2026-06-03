@@ -654,13 +654,16 @@ html.ps-ready .ps-boot {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
-.ps-manifesto-section {
+.ps-manifesto-section,
+.ps-box-section {
+  position: relative;
   background:
     radial-gradient(circle at 52% 0%, color-mix(in oklab, var(--surface-2) 62%, transparent), transparent 46%),
-    var(--bg);
+    var(--bg) !important;
 }
 
-.ps-manifesto-section::before {
+.ps-manifesto-section::before,
+.ps-box-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -673,7 +676,13 @@ html.ps-ready .ps-boot {
   mix-blend-mode: overlay;
 }
 
-.ps-manifesto-grid {
+.ps-box-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ps-manifesto-grid,
+.ps-box-grid {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -687,7 +696,8 @@ html.ps-ready .ps-boot {
     0 28px 90px -58px rgba(0, 0, 0, 0.35);
 }
 
-.ps-manifesto-grid::before {
+.ps-manifesto-grid::before,
+.ps-box-grid::before {
   content: "";
   position: absolute;
   inset: -1px;
@@ -702,7 +712,8 @@ html.ps-ready .ps-boot {
   mix-blend-mode: overlay;
 }
 
-.ps-manifesto-card {
+.ps-manifesto-card,
+.ps-box-card {
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -715,7 +726,12 @@ html.ps-ready .ps-boot {
     color 220ms ease;
 }
 
-.ps-manifesto-card::before {
+.ps-box-card {
+  border: 0 !important;
+}
+
+.ps-manifesto-card::before,
+.ps-box-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -728,12 +744,14 @@ html.ps-ready .ps-boot {
   transition: opacity 220ms ease;
 }
 
-.ps-manifesto-card > * {
+.ps-manifesto-card > *,
+.ps-box-card > * {
   position: relative;
   z-index: 1;
 }
 
-.ps-manifesto-card:hover {
+.ps-manifesto-card:hover,
+.ps-box-card:hover {
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
@@ -741,17 +759,20 @@ html.ps-ready .ps-boot {
     0 18px 42px -34px rgba(0, 0, 0, 0.35);
 }
 
-.ps-manifesto-card:hover::before {
+.ps-manifesto-card:hover::before,
+.ps-box-card:hover::before {
   opacity: 1;
 }
 
-html[data-theme="dark"] .ps-manifesto-section {
+html[data-theme="dark"] .ps-manifesto-section,
+html[data-theme="dark"] .ps-box-section {
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.055), transparent 42%),
-    #090908;
+    #090908 !important;
 }
 
-html[data-theme="dark"] .ps-manifesto-grid {
+html[data-theme="dark"] .ps-manifesto-grid,
+html[data-theme="dark"] .ps-box-grid {
   border-color: rgba(255, 255, 255, 0.15) !important;
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06), transparent 38%),
@@ -761,18 +782,21 @@ html[data-theme="dark"] .ps-manifesto-grid {
     0 32px 120px -64px rgba(0, 0, 0, 0.88);
 }
 
-html[data-theme="dark"] .ps-manifesto-card {
+html[data-theme="dark"] .ps-manifesto-card,
+html[data-theme="dark"] .ps-box-card {
   background:
     linear-gradient(145deg, rgba(18, 18, 16, 0.94), rgba(7, 7, 6, 0.96)) !important;
 }
 
-html[data-theme="dark"] .ps-manifesto-card::before {
+html[data-theme="dark"] .ps-manifesto-card::before,
+html[data-theme="dark"] .ps-box-card::before {
   background:
     radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.15), transparent 50%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 50%);
 }
 
-html[data-theme="dark"] .ps-manifesto-card:hover {
+html[data-theme="dark"] .ps-manifesto-card:hover,
+html[data-theme="dark"] .ps-box-card:hover {
   background:
     linear-gradient(145deg, rgba(29, 29, 26, 0.96), rgba(12, 12, 11, 0.98)) !important;
   box-shadow:
@@ -925,7 +949,8 @@ html[data-theme="dark"] .ps-nature-hero .ps-editor-doc .doc-comment-mark {
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 220px"],
   [style*="grid-template-columns: 2fr 1fr 1fr 1fr 1fr"],
-  [style*="grid-template-columns: 1fr 1fr 1fr"] {
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }

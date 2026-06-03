@@ -694,7 +694,7 @@ function UseCases() {
     { who: "Law firms with client data",       what: "Per-matter encryption keys and a complete chain of custody for every revision." },
   ];
   return (
-    <section style={{ padding: "120px 48px", borderTop: `1px solid var(--rule)`, background: "var(--surface-2)" }}>
+    <section className="ps-box-section" style={{ padding: "120px 48px", borderTop: `1px solid var(--rule)`, background: "var(--surface-2)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <Reveal y={14}>
           <SectionHeader
@@ -703,7 +703,7 @@ function UseCases() {
             sub="The institutions where document sovereignty is non-negotiable. If your work falls under one of these, you already know why this project exists."
           />
         </Reveal>
-        <div style={{
+        <div className="ps-box-grid" style={{
           marginTop: 56,
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
@@ -712,7 +712,7 @@ function UseCases() {
           border: `1px solid var(--rule)`,
         }}>
           {cases.map((c, i) => (
-            <Reveal key={c.who} y={16} delay={i * 60} style={{
+            <Reveal className="ps-box-card" key={c.who} y={16} delay={i * 60} style={{
               background: "var(--bg)",
               padding: "36px 32px",
               minHeight: 200,
