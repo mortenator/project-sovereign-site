@@ -139,20 +139,6 @@ function NavBar({ current = "home" }) {
         })}
       </nav>
       <div style={{ display: "flex", gap: 12, alignItems: "center", justifySelf: "end" }}>
-        <a href="https://github.com/mortenator/project-sovereign-site" target="_blank" rel="noopener noreferrer"
-           className="ps-nav-btn"
-           style={{
-             width: 36, height: 36,
-             border: `1px solid ${navRule}`,
-             display: "grid", placeItems: "center",
-             color: navInk2,
-             transition: "color 200ms ease",
-             borderRadius: 999,
-           }}
-           aria-label="View on GitHub"
-        >
-          <Icon.Github size={15} />
-        </a>
         <ThemeToggle onImage={onImage} />
         <a href="#cta" style={{
           padding: "10px 18px",
@@ -186,17 +172,17 @@ function Footer() {
         <div style={{ maxWidth: 360 }}>
           <Logo />
           <p style={{ marginTop: 16, lineHeight: 1.55 }}>
-            An open-source mission to put a world-class document suite back in European hands. Apache 2.0. Made in Europe, owned wherever you run it.
+            A self-hostable mission to put a world-class document suite back in European hands. Made in Europe, owned wherever you run it.
           </p>
           <div style={{ marginTop: 18, display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <ClassificationStamp label="EU // OPEN" code="APACHE-2.0" color="var(--ink-2)" />
+            <ClassificationStamp label="EU // SELF-HOSTED" code="ON-PREM" color="var(--ink-2)" />
           </div>
         </div>
         {[
           { title: "Product", links: [["Editor", "editor.html"], ["Deploy", "deploy.html"], ["Security", "security.html"], ["DOCX compatibility", "editor.html#compat"]] },
-          { title: "Resources", links: [["Documentation", "#"], ["GitHub", "https://github.com/mortenator/project-sovereign-site"], ["Roadmap", "#"], ["Blog", "resources.html"]] },
+          { title: "Resources", links: [["Documentation", "#"], ["Deployment guide", "deploy.html"], ["Security brief", "security.html"], ["Blog", "resources.html"]] },
           { title: "Compliance", links: [["GDPR", "security.html#gdpr"], ["NIS2", "security.html#nis2"], ["DORA", "security.html#dora"], ["Data residency", "security.html#residency"]] },
-          { title: "Project",   links: [["About", "#"], ["License", "#"], ["Contact", "#"], ["Sponsors", "#"]] },
+          { title: "Project",   links: [["About", "#"], ["On-prem deployments", "deploy.html"], ["Contact", "#"], ["Pilot programme", "#"]] },
         ].map(col => (
           <div key={col.title}>
             <div style={{
@@ -220,7 +206,7 @@ function Footer() {
         display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16,
         fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.08em", color: "var(--ink-2)",
       }}>
-        <span style={{ whiteSpace: "nowrap" }}>PROJECT SOVEREIGN · 2026 · APACHE-2.0</span>
+        <span style={{ whiteSpace: "nowrap" }}>PROJECT SOVEREIGN · 2026 · ON-PREM READY</span>
         <span style={{ display: "flex", gap: 18, whiteSpace: "nowrap" }}>
           <span>BUILT IN EUROPE</span>
           <span>·</span>
@@ -326,7 +312,6 @@ function PageHero({ eyebrow, title, sub, ctas }) {
                   display: "inline-flex", alignItems: "center", gap: 10,
                   whiteSpace: "nowrap",
                 }}>
-                  {c.icon === "github" && <Icon.Github size={14} color={c.primary ? "var(--bg)" : "var(--ink)"} />}
                   {c.label} {!c.icon && <Icon.Arrow size={12} color={c.primary ? "var(--bg)" : "var(--ink)"} />}
                 </a>
               ))}
@@ -359,17 +344,17 @@ function FooterCTA() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginTop: 56, gap: 40, flexWrap: "wrap" }}>
           <p style={{ maxWidth: 560, color: "var(--ink-2)", fontSize: 19, margin: 0, lineHeight: 1.5 }}>
-            One install command. Two hours to get the stack up. A generation to remember what it felt like, in Europe, to make our own things, and to keep them.
+            On-prem, private cloud, or EU-cloud deployments for institutions that need custody of their own documents.
           </p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <a href="https://github.com/mortenator/project-sovereign-site" target="_blank" rel="noopener noreferrer" style={{
+            <a href="deploy.html" style={{
               padding: "14px 22px",
               borderRadius: 999,
               background: "var(--ink)", color: "var(--bg)",
               fontSize: 14.5, fontWeight: 500, textDecoration: "none",
               display: "inline-flex", alignItems: "center", gap: 10,
             }}>
-              <Icon.Github size={15} color="var(--bg)" /> github.com/mortenator/project-sovereign-site
+              Discuss an on-prem deployment <Icon.Arrow size={13} color="var(--bg)" />
             </a>
             <a href="deploy.html" style={{
               padding: "14px 22px",
@@ -392,11 +377,11 @@ function FooterCTA() {
           fontFamily: "var(--font-mono)", fontSize: 14,
           display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap",
         }}>
-          <span style={{ color: "var(--ink-3)" }}>$</span>
-          <span style={{ color: "var(--ink)" }}>curl -fsSL projectsovereign.eu/install.sh | bash</span>
+          <span style={{ color: "var(--ink-3)" }}>→</span>
+          <span style={{ color: "var(--ink)" }}>Deployment brief available for qualified institutions</span>
           <div style={{ flex: 1 }} />
           <span style={{ fontSize: 11, letterSpacing: "0.1em", color: "var(--ink-2)" }}>
-            ≈ 8 MINUTES TO YOUR FIRST DOCUMENT
+            ON-PREM REVIEW AVAILABLE
           </span>
         </div>
       </div>

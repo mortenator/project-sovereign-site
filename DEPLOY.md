@@ -10,67 +10,31 @@ The public entry pages are:
 - `security.html`
 - `resources.html`
 
-## GitHub Pages
+## Static Hosting
 
-The repository is intended to publish from the `main` branch root.
+Publish the repository root as static files behind the custom domain
+`projectsovereign.eu`.
 
-```bash
-git init
-git branch -M main
-git add index.html editor.html deploy.html security.html resources.html styles.css parts CNAME .nojekyll README.md DEPLOY.md vercel.json install.sh
-git commit -m "Initial Project Sovereign site"
-gh repo create mortenator/project-sovereign-site --public --source=. --push
-```
+Required files and directories:
 
-Then enable Pages for the repository:
-
-```bash
-gh api repos/mortenator/project-sovereign-site/pages \
-  --method POST \
-  --input - <<'JSON'
-{"source":{"branch":"main","path":"/"}}
-JSON
-```
-
-GitHub Pages will serve the project at:
-
-- `https://mortenator.github.io/project-sovereign-site/`
-- `https://projectsovereign.eu/` once DNS has propagated
+- HTML entry files listed above
+- `styles.css`
+- `favicon.svg`
+- `assets/`
+- `parts/`
+- `CNAME`
+- `vercel.json` if the site is imported into Vercel
 
 ## Custom Domain
 
-`CNAME` contains `projectsovereign.eu`, which tells GitHub Pages which custom
-domain should point at this repository.
+`CNAME` contains `projectsovereign.eu`, which tells static hosting providers
+which custom domain should point at this project.
 
-At the domain registrar, configure the apex domain:
+DNS can take time to propagate. Enable HTTPS enforcement wherever the site is
+hosted.
 
-| Type | Host | Value |
-| --- | --- | --- |
-| `A` | `@` | `185.199.108.153` |
-| `A` | `@` | `185.199.109.153` |
-| `A` | `@` | `185.199.110.153` |
-| `A` | `@` | `185.199.111.153` |
+## Public Installer
 
-Optional IPv6 records:
-
-| Type | Host | Value |
-| --- | --- | --- |
-| `AAAA` | `@` | `2606:50c0:8000::153` |
-| `AAAA` | `@` | `2606:50c0:8001::153` |
-| `AAAA` | `@` | `2606:50c0:8002::153` |
-| `AAAA` | `@` | `2606:50c0:8003::153` |
-
-For `www.projectsovereign.eu`, add:
-
-| Type | Host | Value |
-| --- | --- | --- |
-| `CNAME` | `www` | `mortenator.github.io` |
-
-DNS can take up to 24 hours to propagate. After GitHub sees the records, enable
-`Enforce HTTPS` in the repository's Pages settings.
-
-## Vercel Alternative
-
-`vercel.json` remains in the repo so the same static files can also be imported
-to Vercel with clean URLs and security headers. The GitHub Pages path above is
-the default setup for `projectsovereign.eu`.
+The deployment kit is not publicly published yet. Public site copy should point
+qualified institutions to the deployment brief or on-prem deployment discussion,
+not to a public repository or one-line install command.

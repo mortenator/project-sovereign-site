@@ -157,7 +157,7 @@ const DOC_PRESETS = {
         `Quarterly tabletop exercises (next: 14 Mar)`,
         `Third-party penetration test commissioned`,
       ] },
-      { type: "p", html: `Supply-chain controls are documented under <span class="doc-comment-mark">Annex C</span>. We use only open-source components with a known provenance and pinned versions.` },
+      { type: "p", html: `Supply-chain controls are documented under <span class="doc-comment-mark">Annex C</span>. We use only components with known provenance, pinned versions, and documented custody.` },
     ],
     comments: [
       { author: "Luca Ferri", role: "CISO", on: "Annex C", body: "Add the SBOM diff against the previous release here.", time: "8m" },

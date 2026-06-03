@@ -6,7 +6,7 @@ const HERO_COPY = {
     eyebrow: "PROJECT SOVEREIGN · A EUROPEAN MISSION",
     title: ["Best-in-class software,", "built for a sovereign Europe"],
     titleEm: 1, // index of the line that gets the italic emphasis (whole line)
-    sub: "Project Sovereign is an open-source initiative to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules, owned by the institutions that use it. Apache 2.0, free forever, made to outlast its makers.",
+    sub: "Project Sovereign is a self-hostable initiative to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules, owned by the institutions that use it.",
     cta1: "Self-host the suite",
     cta2: "Read the manifesto",
   },
@@ -22,9 +22,9 @@ const HERO_COPY = {
     eyebrow: "OPEN · PUBLIC · EUROPEAN",
     title: ["European software,", "in European hands"],
     titleEm: 1,
-    sub: "A complete office suite, editor, real-time collaboration, storage, identity, that you install in an afternoon and own forever. Apache 2.0. No per-seat tax. No vendor on the other side of the Atlantic. No exit clause to negotiate, ever.",
-    cta1: "git clone & docker compose up",
-    cta2: "Read the source",
+    sub: "A complete office suite, editor, real-time collaboration, storage, identity, delivered as an on-prem or European-cloud deployment you control. No per-seat tax. No vendor on the other side of the Atlantic. No exit clause to negotiate, ever.",
+    cta1: "Plan an on-prem deployment",
+    cta2: "Read the deployment brief",
   },
 };
 
@@ -180,7 +180,7 @@ function Manifesto() {
             {
               k: "OWNERSHIP",
               h: "Public-good infrastructure",
-              p: "Apache 2.0. Public roadmap. A foundation-style governance model in the works. Any institution that wants to run it for itself can; any developer who wants to improve it has the keys.",
+              p: "Institution-owned infrastructure with a foundation-style governance model in the works. Any qualified institution that wants to run it for itself can; deployment paths are designed to be inspectable, portable, and durable.",
             },
             {
               k: "RESIDENCY",
@@ -294,14 +294,14 @@ function FeatureSpotlights() {
     },
     {
       n: "03",
-      tag: "OPEN · PUBLIC · APACHE 2.0",
-      title: "Public infrastructure, read the source",
-      body: "Every line is on GitHub. No closed enterprise edition with the features you actually need behind a wall. Public roadmap. Public RFCs. A licence that lets anyone, a startup, a ministry, a co-operative, run it for themselves. Europe's digital infrastructure has been opaque for thirty years; that ends here.",
+      tag: "PORTABLE · INSPECTABLE · OWNED",
+      title: "Infrastructure your institution can actually hold",
+      body: "No closed enterprise edition with the features you actually need behind a wall. The same deployment kit runs for ministries, banks, universities, and firms that need custody of their own documents. Europe's digital infrastructure has been opaque for thirty years; that ends here.",
       bullets: [
-        "Apache 2.0, commercial use, no friction",
-        "Roadmap maintained in the open",
-        "Public RFCs for breaking changes",
-        "Sponsorship, not seat-licensing",
+        "On-prem, private cloud, or EU-cloud deployments",
+        "Inspectable deployment kit and documented controls",
+        "Portable document formats and exit paths",
+        "Support without seat-licensing lock-in",
       ],
       visual: "code",
     },
@@ -477,11 +477,11 @@ function StackVisual() {
 
 function CodeVisual() {
   const lines = [
-    { c: "$", t: "git clone https://github.com/mortenator/project-sovereign-site" },
-    { c: "$", t: "cd project-sovereign-site/deploy/docker-compose" },
-    { c: "$", t: "./scripts/setup.sh" },
-    { c: "→", t: "generating passwords... done" },
-    { c: "→", t: "pulling images... done" },
+    { c: "$", t: "sovereign deploy plan --target on-prem" },
+    { c: "$", t: "sovereign configure --region eu-central-1" },
+    { c: "$", t: "sovereign preflight --audit" },
+    { c: "→", t: "checking residency controls... done" },
+    { c: "→", t: "validating deployment bundle... done" },
     { c: "→", t: "starting 8 services... done" },
     { c: "✓", t: "sovereign is running at https://docs.your.eu" },
     { c: " ", t: "" },
@@ -610,7 +610,7 @@ function DocxCompatSection() {
           <SectionHeader
             eyebrow="DOCX COMPATIBILITY"
             title={["The world runs on .docx.", { em: "We don't break it" }, "."]}
-            sub="A 5,000-document test corpus from real EU public-sector and finance archives, round-tripped through every release. Numbers reflect our current main branch vs. the most popular open alternative. Both are open-source."
+            sub="A 5,000-document test corpus from real EU public-sector and finance archives, round-tripped through every release. Numbers reflect our current deployment branch vs. the most popular alternative suites."
           />
         </Reveal>
 
@@ -833,14 +833,14 @@ function FooterCTA() {
             One install command. Two hours to get the stack up. A generation to remember what it felt like, in Europe, to make our own things, and to keep them.
           </p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <a href="https://github.com/mortenator/project-sovereign-site" target="_blank" rel="noopener noreferrer" style={{
+            <a href="deploy.html" style={{
               padding: "14px 22px",
               borderRadius: 999,
               background: "var(--ink)", color: "var(--bg)",
               fontSize: 14.5, fontWeight: 500, textDecoration: "none",
               display: "inline-flex", alignItems: "center", gap: 10,
             }}>
-              <Icon.Github size={15} color="var(--bg)" /> github.com/mortenator/project-sovereign-site
+              Discuss an on-prem deployment <Icon.Arrow size={13} color="var(--bg)" />
             </a>
             <a href="deploy.html" style={{
               padding: "14px 22px",
@@ -864,11 +864,11 @@ function FooterCTA() {
           fontFamily: "var(--font-mono)", fontSize: 14,
           display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap",
         }}>
-          <span style={{ color: "var(--ink-3)" }}>$</span>
-          <span style={{ color: "var(--ink)" }}>curl -fsSL projectsovereign.eu/install.sh | bash</span>
+          <span style={{ color: "var(--ink-3)" }}>→</span>
+          <span style={{ color: "var(--ink)" }}>Deployment brief available for qualified institutions</span>
           <div style={{ flex: 1 }} />
           <span style={{ fontSize: 11, letterSpacing: "0.1em", color: "var(--ink-2)" }}>
-            ≈ 8 MINUTES TO YOUR FIRST DOCUMENT
+            ON-PREM REVIEW AVAILABLE
           </span>
         </div>
       </div>

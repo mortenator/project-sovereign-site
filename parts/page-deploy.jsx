@@ -9,7 +9,7 @@ function PageDeploy() {
         title={["Two hours to", { em: "Europe's own office suite" }]}
         sub="Eight services, one private network, one config file. The deployment kit is the same one we ship to ministries and enterprises, and it's the same one you can read on your laptop in twenty minutes. No vendor on the other side of the Atlantic. No exit clause to negotiate."
         ctas={[
-          { label: "github.com/mortenator/project-sovereign-site", href: "https://github.com/mortenator/project-sovereign-site", primary: true, icon: "github" },
+          { label: "Discuss an on-prem deployment", href: "#cta", primary: true },
           { label: "Helm chart for production",      href: "#helm" },
         ]}
       />
@@ -19,8 +19,8 @@ function PageDeploy() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <SectionHeader
             eyebrow="ZERO TO RUNNING"
-            title={["Three commands.", { em: "That's the install" }, "."]}
-            sub="There is a longer guide for production hardening, but the development install is genuinely this short. Anything you spin up locally is something you can deploy to a server with the same compose file."
+            title={["Three checks.", { em: "Then we deploy" }, "."]}
+            sub="The public site does not ship a downloadable installer yet. For now, deployments are prepared with each institution so residency, keys, identity, and audit requirements are captured before the stack is handed over."
             compact
           />
 
@@ -35,24 +35,24 @@ function PageDeploy() {
                 <span style={{ width: 9, height: 9, borderRadius: 999, background: "var(--bg)" }}></span>
                 <span style={{ width: 9, height: 9, borderRadius: 999, background: "var(--bg)" }}></span>
               </div>
-              <div><span style={{ opacity: 0.45 }}>$</span> git clone https://github.com/mortenator/project-sovereign-site</div>
-              <div><span style={{ opacity: 0.45 }}>$</span> cd project-sovereign-site/deploy/docker-compose</div>
-              <div><span style={{ opacity: 0.45 }}>$</span> ./scripts/setup.sh</div>
+              <div><span style={{ opacity: 0.45 }}>$</span> sovereign preflight --target on-prem</div>
+              <div><span style={{ opacity: 0.45 }}>$</span> sovereign configure --region eu-central-1</div>
+              <div><span style={{ opacity: 0.45 }}>$</span> sovereign handover --with-audit-pack</div>
               <div style={{ marginTop: 14, opacity: 0.7 }}>
-                <div>→ generating passwords… done</div>
-                <div>→ pulling 8 images (≈ 1.2 GB)… done</div>
-                <div>→ initialising postgres + keycloak realm… done</div>
-                <div>→ provisioning minio bucket: sovereign-documents… done</div>
-                <div>→ starting traefik on :80, :443… done</div>
-                <div>→ running healthchecks (60s budget)… done</div>
+                <div>→ checking residency requirements… done</div>
+                <div>→ mapping identity provider and roles… done</div>
+                <div>→ confirming customer-managed keys… done</div>
+                <div>→ preparing audit evidence pack… done</div>
+                <div>→ validating backup and restore plan… done</div>
+                <div>→ scheduling controlled handover… done</div>
               </div>
               <div style={{ marginTop: 14 }}>
                 <span style={{ color: "oklch(0.78 0.13 145)" }}>✓</span>{" "}
-                sovereign is running at <span style={{ textDecoration: "underline" }}>https://docs.your.eu</span>
+                deployment bundle ready for your environment
               </div>
               <div style={{ marginTop: 8 }}>
                 <span style={{ color: "oklch(0.78 0.13 145)" }}>✓</span>{" "}
-                admin / temp-password printed to .env.local
+                audit pack prepared for DPO and security review
               </div>
               <div style={{ marginTop: 14, color: "var(--bg)" }}>
                 <span style={{ opacity: 0.45 }}>$</span>
@@ -61,17 +61,17 @@ function PageDeploy() {
             </div>
 
             <div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500, margin: "0 0 14px", letterSpacing: "-0.018em" }}>What setup.sh actually does</h3>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500, margin: "0 0 14px", letterSpacing: "-0.018em" }}>What the deployment prep covers</h3>
               <ol style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {[
-                  ["Checks Docker, Compose, and writable disk in /var/lib"],
-                  ["Prompts for your domain, or generates a wildcard *.lvh.me for local"],
-                  ["Generates strong passwords for every service into .env.local"],
-                  ["Pulls pinned image digests; refuses 'latest' tags"],
-                  ["Runs init.sql for three databases: sovereign, onlyoffice, keycloak"],
-                  ["Imports the Sovereign Keycloak realm with default roles"],
-                  ["Issues TLS via Let's Encrypt (or skips if you said --self-signed)"],
-                  ["Verifies every service's health endpoint before exiting"],
+                  ["Confirms on-prem, private-cloud, or EU-cloud target"],
+                  ["Maps SAML/OIDC, roles, and administrative boundaries"],
+                  ["Defines customer-managed key custody and rotation"],
+                  ["Pins deployment components and supply-chain evidence"],
+                  ["Plans object storage, database, and backup topology"],
+                  ["Documents sub-processors and data residency controls"],
+                  ["Prepares TLS, domain, and network requirements"],
+                  ["Runs handover checklist with security and operations"],
                 ].map(([t], i) => (
                   <li key={i} style={{
                     display: "grid", gridTemplateColumns: "44px 1fr",
