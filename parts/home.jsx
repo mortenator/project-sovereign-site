@@ -137,7 +137,7 @@ function Hero({ copy, editorMode, docAngle }) {
 // ---------- Manifesto ----------
 function Manifesto() {
   return (
-    <section style={{ padding: "140px 48px 120px", borderBottom: `1px solid var(--rule)`, position: "relative" }}>
+    <section className="ps-manifesto-section" style={{ padding: "140px 48px 120px", borderBottom: `1px solid var(--rule)`, position: "relative" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 10,
@@ -163,7 +163,7 @@ function Manifesto() {
           <em style={{ fontStyle: "italic", fontWeight: 400 }}>here</em>.
         </p>
 
-        <div style={{
+        <div className="ps-manifesto-grid" style={{
           marginTop: 56,
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
@@ -188,7 +188,7 @@ function Manifesto() {
               p: "Every byte, every dependency, every sub-processor lives inside the European Economic Area. Not as a region setting, as a constraint baked into the codebase and verified in CI.",
             },
           ].map(c => (
-            <div key={c.k} style={{ padding: "36px 32px", background: "var(--bg)" }}>
+            <div className="ps-manifesto-card" key={c.k} style={{ padding: "36px 32px", background: "var(--bg)" }}>
               <div style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em",
                 color: "var(--ink-2)", marginBottom: 18,

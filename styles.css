@@ -654,6 +654,133 @@ html.ps-ready .ps-boot {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
+.ps-manifesto-section {
+  background:
+    radial-gradient(circle at 52% 0%, color-mix(in oklab, var(--surface-2) 62%, transparent), transparent 46%),
+    var(--bg);
+}
+
+.ps-manifesto-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    radial-gradient(circle at 20% 40%, rgba(0, 0, 0, 0.06) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px);
+  background-size: 4px 4px, 6px 6px;
+  mix-blend-mode: overlay;
+}
+
+.ps-manifesto-grid {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 8px;
+  border-color: color-mix(in oklab, var(--rule-strong) 86%, transparent) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), transparent 38%),
+    color-mix(in oklab, var(--rule) 84%, transparent) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 90px -58px rgba(0, 0, 0, 0.35);
+}
+
+.ps-manifesto-grid::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.38;
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px),
+    radial-gradient(circle at 75% 70%, rgba(0, 0, 0, 0.08) 0 1px, transparent 1px),
+    linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 3px 3px, 5px 5px, 180% 180%;
+  mix-blend-mode: overlay;
+}
+
+.ps-manifesto-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, color-mix(in oklab, var(--bg) 94%, var(--surface-2)), var(--bg)) !important;
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease,
+    color 220ms ease;
+}
+
+.ps-manifesto-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 26%, rgba(255, 255, 255, 0.28), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.11), transparent 48%);
+  transition: opacity 220ms ease;
+}
+
+.ps-manifesto-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ps-manifesto-card:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 0 0 1px color-mix(in oklab, var(--rule-strong) 78%, transparent),
+    0 18px 42px -34px rgba(0, 0, 0, 0.35);
+}
+
+.ps-manifesto-card:hover::before {
+  opacity: 1;
+}
+
+html[data-theme="dark"] .ps-manifesto-section {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.055), transparent 42%),
+    #090908;
+}
+
+html[data-theme="dark"] .ps-manifesto-grid {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06), transparent 38%),
+    rgba(255, 255, 255, 0.10) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 32px 120px -64px rgba(0, 0, 0, 0.88);
+}
+
+html[data-theme="dark"] .ps-manifesto-card {
+  background:
+    linear-gradient(145deg, rgba(18, 18, 16, 0.94), rgba(7, 7, 6, 0.96)) !important;
+}
+
+html[data-theme="dark"] .ps-manifesto-card::before {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.15), transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 50%);
+}
+
+html[data-theme="dark"] .ps-manifesto-card:hover {
+  background:
+    linear-gradient(145deg, rgba(29, 29, 26, 0.96), rgba(12, 12, 11, 0.98)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.095),
+    0 0 46px rgba(255, 255, 255, 0.045);
+}
+
 .ps-editor-glass .ps-editor-doc {
   text-shadow: 0 1px 18px rgba(255, 255, 255, 0.72);
 }
