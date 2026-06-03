@@ -10,7 +10,7 @@ function PageDeploy() {
         sub="Eight services, one private network, one config file. The deployment kit is the same one we ship to ministries and enterprises, and it's the same one you can read on your laptop in twenty minutes. No vendor on the other side of the Atlantic. No exit clause to negotiate."
         ctas={[
           { label: "Discuss an on-prem deployment", href: "#cta", primary: true },
-          { label: "Helm chart for production",      href: "#helm" },
+          { label: "Production architecture",        href: "#helm" },
         ]}
       />
 
@@ -20,7 +20,7 @@ function PageDeploy() {
           <SectionHeader
             eyebrow="ZERO TO RUNNING"
             title={["Three checks.", { em: "Then we deploy" }, "."]}
-            sub="The public site does not ship a downloadable installer yet. For now, deployments are prepared with each institution so residency, keys, identity, and audit requirements are captured before the stack is handed over."
+            sub="Deployments are prepared with each institution so residency, keys, identity, and audit requirements are captured before the stack is handed over."
             compact
           />
 

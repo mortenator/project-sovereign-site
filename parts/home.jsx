@@ -14,12 +14,12 @@ const HERO_COPY = {
     eyebrow: "COMPLIANCE BUILT IN, NOT BOLTED ON",
     title: ["The Word alternative", "Europe's regulators already trust"],
     titleEm: 1,
-    sub: "GDPR, NIS2, DORA, and the EU AI Act mapped to the product, line by line. A complete audit trail. A stack made of components your auditors recognise, and a project with a public charter Europe can rely on.",
+    sub: "GDPR, NIS2, DORA, and the EU AI Act mapped to the product, line by line. A complete audit trail. A stack made of components your auditors recognise, and a project with an institutional charter Europe can rely on.",
     cta1: "See the control mapping",
     cta2: "Talk to the maintainers",
   },
   ownership: {
-    eyebrow: "OPEN · PUBLIC · EUROPEAN",
+    eyebrow: "SELF-HOSTED · EUROPEAN · OWNED",
     title: ["European software,", "in European hands"],
     titleEm: 1,
     sub: "A complete office suite, editor, real-time collaboration, storage, identity, delivered as an on-prem or European-cloud deployment you control. No per-seat tax. No vendor on the other side of the Atlantic. No exit clause to negotiate, ever.",
@@ -282,8 +282,8 @@ function FeatureSpotlights() {
     {
       n: "02",
       tag: "SELF-HOSTABLE",
-      title: "One install command from running your own stack",
-      body: "Eight services, one private network, zero phone-home. The deployment kit is the same one we ship to ministries and large enterprises, Traefik, Postgres, MinIO, Keycloak, Redis, OnlyOffice, the editor shell, the collaboration server. Standard parts an SRE can read on a Friday, in a stack a board can sign off on.",
+      title: "Deployment prep for your own stack",
+      body: "Eight services, one private network, zero phone-home. The deployment kit is prepared with ministries and large enterprises, Traefik, Postgres, MinIO, Keycloak, Redis, OnlyOffice, the editor shell, the collaboration server. Standard parts an SRE can review, in a stack a board can sign off on.",
       bullets: [
         "Docker Compose for small orgs, Helm for ministries and enterprises",
         "Bring your own cloud, Hetzner, OVH, Scaleway, IONOS, on-prem",
@@ -754,7 +754,7 @@ function FAQ() {
     },
     {
       q: "Can it run air-gapped?",
-      a: "Yes. We publish a signed offline bundle every quarter. Pre-pull images, mirror the package registry, and you have a fully working deployment with no internet access. Defence and critical-infra deployments do this routinely.",
+      a: "Yes. Air-gapped deployments are supported through prepared offline bundles. Pre-pull images, mirror the package registry, and the environment can run without internet access once security and operations teams have completed the handover.",
     },
     {
       q: "What about AI features?",
@@ -830,7 +830,7 @@ function FooterCTA() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginTop: 56, gap: 40, flexWrap: "wrap" }}>
           <p style={{ maxWidth: 560, color: "var(--ink-2)", fontSize: 19, margin: 0, lineHeight: 1.5 }}>
-            One install command. Two hours to get the stack up. A generation to remember what it felt like, in Europe, to make our own things, and to keep them.
+            A guided deployment path. Two hours once the environment is ready. A generation to remember what it felt like, in Europe, to make our own things, and to keep them.
           </p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <a href="deploy.html" style={{

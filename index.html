@@ -6,13 +6,72 @@
 <meta name="description" content="Project Sovereign, an ambitious self-hostable mission to put a world-class document suite back in European hands. Hosted on European infrastructure, governed by European rules. GDPR, NIS2, DORA, EU AI Act compliant by design." />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#F2F4F7" />
-<link rel="canonical" href="https://projectsovereign.eu/" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="canonical" href="https://www.projectsovereign.eu/" />
+<link rel="alternate" type="text/plain" href="https://www.projectsovereign.eu/llms.txt" title="Project Sovereign LLM guide" />
+<link rel="alternate" type="text/plain" href="https://www.projectsovereign.eu/llms-full.txt" title="Project Sovereign full LLM context" />
+<link rel="sitemap" type="application/xml" href="https://www.projectsovereign.eu/sitemap.xml" />
 <meta property="og:title" content="Project Sovereign" />
 <meta property="og:description" content="Best-in-class software, built for a sovereign Europe." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://projectsovereign.eu/" />
+<meta property="og:url" content="https://www.projectsovereign.eu/" />
+<meta property="og:site_name" content="Project Sovereign" />
+<meta property="og:image" content="https://www.projectsovereign.eu/assets/hero-nature-bg.jpg" />
 <meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Project Sovereign" />
+<meta name="twitter:description" content="Best-in-class software, built for a sovereign Europe." />
 <link rel="icon" href="favicon.svg?v=20260601-eu" type="image/svg+xml" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.projectsovereign.eu/#organization",
+      "name": "Project Sovereign",
+      "url": "https://www.projectsovereign.eu/",
+      "logo": "https://www.projectsovereign.eu/favicon.svg"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.projectsovereign.eu/#website",
+      "url": "https://www.projectsovereign.eu/",
+      "name": "Project Sovereign",
+      "description": "A self-hostable European document suite for institutions that need sovereignty, compliance, and control.",
+      "publisher": { "@id": "https://www.projectsovereign.eu/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.projectsovereign.eu/#software",
+      "name": "Project Sovereign",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web browser; self-hosted infrastructure",
+      "url": "https://www.projectsovereign.eu/",
+      "description": "A self-hostable document suite with DOCX-compatible editing, real-time collaboration, EEA data residency, customer-managed deployment, audit logs, and controls for GDPR, NIS2, DORA, and the EU AI Act.",
+      "publisher": { "@id": "https://www.projectsovereign.eu/#organization" },
+      "featureList": [
+        "DOCX-compatible document editor",
+        "Real-time collaboration",
+        "On-prem, private-cloud, and European-cloud deployment",
+        "EEA data residency",
+        "Customer-managed key custody",
+        "Compliance evidence for GDPR, NIS2, DORA, and EU AI Act reviews"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.projectsovereign.eu/#webpage",
+      "url": "https://www.projectsovereign.eu/",
+      "name": "Project Sovereign",
+      "description": "Best-in-class software, built for a sovereign Europe.",
+      "isPartOf": { "@id": "https://www.projectsovereign.eu/#website" },
+      "about": { "@id": "https://www.projectsovereign.eu/#software" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://unpkg.com" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,7 +162,7 @@
 <script type="text/babel" src="parts/chrome.jsx?v=20260602-private-deploy"></script>
 <script type="text/babel" src="parts/editor-demo.jsx?v=20260602-private-deploy"></script>
 <script type="text/babel" src="parts/tweaks-panel.jsx?v=20260601-navglass"></script>
-<script type="text/babel" src="parts/home.jsx?v=20260602-private-deploy"></script>
+<script type="text/babel" src="parts/home.jsx?v=20260603-llm-seo"></script>
 
 <script type="text/babel">
   function App() {
