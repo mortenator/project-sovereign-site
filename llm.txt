@@ -1,9 +1,0 @@
-# Project Sovereign
-
-The canonical LLM guide is available at:
-
-https://www.projectsovereign.eu/llms.txt
-
-For fuller context, use:
-
-https://www.projectsovereign.eu/llms-full.txt

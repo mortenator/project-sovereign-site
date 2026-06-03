@@ -1,40 +1,34 @@
 # Deploying Project Sovereign
 
-The site is plain static HTML plus browser-side React. There is no build step.
+The site is generated static HTML plus a Vercel serverless contact function.
 
-The public entry pages are:
+## Build
 
-- `index.html`
-- `editor.html`
-- `deploy.html`
-- `security.html`
-- `resources.html`
+```bash
+npm run build
+```
 
-## Static Hosting
+The generated public site lives in `dist/`.
 
-Publish the repository root as static files behind the custom domain
-`projectsovereign.eu`.
+## Vercel
 
-Required files and directories:
+Vercel is configured to:
 
-- HTML entry files listed above
-- `styles.css`
-- `favicon.svg`
-- `assets/`
-- `parts/`
-- `CNAME`
-- `vercel.json` if the site is imported into Vercel
+- run `npm run build`
+- serve `dist/`
+- preserve clean canonical URLs
+- redirect legacy `.html` paths to clean paths
+- forward `/api/contact` to the serverless function
 
-## Custom Domain
+Required environment variables:
 
-`CNAME` contains `projectsovereign.eu`, which tells static hosting providers
-which custom domain should point at this project.
+- `NATOROS_CONTACT_WEBHOOK_URL`
+- `NATOROS_CONTACT_WEBHOOK_SECRET` (optional bearer token)
 
-DNS can take time to propagate. Enable HTTPS enforcement wherever the site is
-hosted.
+## Custom Domains
 
-## Public Installer
+The canonical host is `https://www.projectsovereign.eu/`.
 
-The deployment kit is not publicly published yet. Public site copy should point
-qualified institutions to the deployment brief or on-prem deployment discussion,
-not to a public repository or one-line install command.
+The apex domain `https://projectsovereign.eu/*` must point to Vercel or another
+host that can issue a permanent server-side redirect to matching `www` paths.
+Registrar parking or JavaScript forwarding must be removed.
