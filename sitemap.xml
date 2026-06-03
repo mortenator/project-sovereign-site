@@ -7,25 +7,25 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.projectsovereign.eu/editor.html</loc>
+    <loc>https://www.projectsovereign.eu/editor</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.projectsovereign.eu/deploy.html</loc>
+    <loc>https://www.projectsovereign.eu/deploy</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.projectsovereign.eu/security.html</loc>
+    <loc>https://www.projectsovereign.eu/security</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.projectsovereign.eu/resources.html</loc>
+    <loc>https://www.projectsovereign.eu/resources</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

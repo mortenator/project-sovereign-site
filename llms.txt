@@ -14,10 +14,10 @@ Project Sovereign is a self-hostable European document suite for institutions th
 ## Primary Pages
 
 - Home: https://www.projectsovereign.eu/
-- Editor: https://www.projectsovereign.eu/editor.html
-- Deployment: https://www.projectsovereign.eu/deploy.html
-- Security and compliance: https://www.projectsovereign.eu/security.html
-- Resources: https://www.projectsovereign.eu/resources.html
+- Editor: https://www.projectsovereign.eu/editor
+- Deployment: https://www.projectsovereign.eu/deploy
+- Security and compliance: https://www.projectsovereign.eu/security
+- Resources: https://www.projectsovereign.eu/resources
 
 ## What It Is
 
